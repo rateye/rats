@@ -1,0 +1,57 @@
+/* character-design.css */
+@font-face {
+    font-family: 'MyHandwriting';
+    src: url('fonts/MyHandwriting.woff2') format('woff2'),
+         url('fonts/MyHandwriting.ttf') format('truetype');
+}
+
+body {
+    font-family: 'MyHandwriting', cursive;
+    background-color: #fff3e0;
+    color: #ff4081;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3em;
+    color: #ffcc00;
+    text-shadow: 2px 2px #ff4081;
+    animation: wiggle 2s infinite;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.character-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.character-item {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.character-item:hover {
+    transform: scale(1.05);
+}
+
+.character-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
